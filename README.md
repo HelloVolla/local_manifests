@@ -10,8 +10,9 @@ Please check the [Halium documentation](http://docs.halium.org/en/latest/) and [
 ```
 repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
 mkdir .repo/local_manifests
-curl -o .repo/local_manifests/yggdrasil.xml https://raw.githubusercontent.com/HelloVolla/local_manifests/yggdrasil.xml
+curl -o .repo/local_manifests/yggdrasil.xml https://raw.githubusercontent.com/HelloVolla/local_manifests/halium-9.0/yggdrasil.xml
 repo sync -c
+hybris-patches/apply-patches.sh --mb
 . build/envsetup.sh
 lunch lineage_yggdrasil-userdebug
 mka halium-boot systemimage
